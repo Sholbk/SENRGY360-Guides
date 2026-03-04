@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SENERGY360 - Your Path to a Healthier Home",
   description: "Join the SENERGY360 community and receive expert-created guides with practical, research-informed strategies to optimize your home environment and reduce toxic load.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/favicon-180.png",
+  },
 };
 
 export default function RootLayout({

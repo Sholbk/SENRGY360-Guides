@@ -99,8 +99,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #FAFAF8 0%, #F5F0E1 50%, #FAFAF8 100%)' }}>
+      {/* Header */}
+      <header className="px-6 py-4 max-w-7xl mx-auto flex items-center gap-3">
+        <img src="/logo.png" alt="SENERGY360 Logo" className="h-12 w-12 object-contain" />
+        <span className="text-lg font-semibold text-foreground tracking-wide">SENERGY360</span>
+      </header>
+
       {/* Hero Section */}
-      <section className="px-6 pt-16 pb-20 max-w-7xl mx-auto">
+      <section className="px-6 pt-8 pb-20 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side */}
           <div>
@@ -358,9 +364,7 @@ export default function Home() {
       <footer className="px-6 py-8 border-t border-border bg-background">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <img src="/logo.png" alt="SENERGY360 Logo" className="h-8 w-8 object-contain" />
             <span className="text-sm font-semibold text-foreground">SENERGY360</span>
           </div>
           <p className="text-sm text-muted">
