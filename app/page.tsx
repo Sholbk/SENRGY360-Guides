@@ -102,7 +102,7 @@ export default function Home() {
       {/* Header */}
       <header className="px-6 py-4 max-w-7xl mx-auto flex items-center gap-3">
         <img src="/logo.png" alt="SENERGY360 Logo" className="h-12 w-12 object-contain" />
-        <span className="text-lg font-semibold text-foreground tracking-wide">SENERGY360</span>
+        <span className="text-lg font-semibold text-foreground tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>SENERGY360</span>
       </header>
 
       {/* Hero Section */}
@@ -110,10 +110,10 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side */}
           <div>
-            <p className="text-sm font-semibold tracking-widest text-muted uppercase mb-4">
+            <p className="text-sm font-semibold tracking-widest text-muted uppercase mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
               SENERGY360 COMMUNITY
             </p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               Your Path to a{' '}
               <br />
               <span style={{ color: '#C5A55A' }}>Healthier Home</span>
@@ -174,7 +174,7 @@ export default function Home() {
       {/* Choose Your Guides Section */}
       <section id="guides" className="px-6 py-20 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground" style={{ fontFamily: 'Georgia, serif' }}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
             Choose Your Guides
           </h2>
           <p className="mt-4 text-muted text-base max-w-xl mx-auto">
@@ -247,7 +247,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Georgia, serif' }}>
+              <h3 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'var(--font-subheading)' }}>
                 Thank You, {firstName}!
               </h3>
               <p className="mt-2 text-muted">
@@ -282,7 +282,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-foreground text-center" style={{ fontFamily: 'Georgia, serif' }}>
+              <h3 className="text-2xl font-bold text-foreground text-center" style={{ fontFamily: 'var(--font-subheading)' }}>
                 Get Your Free Guides
               </h3>
               <p className="text-muted text-sm text-center mt-2 mb-6">
