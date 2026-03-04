@@ -167,12 +167,20 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Arrow prompt */}
-            <div className="flex items-center gap-2 mt-8 text-muted text-sm">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-              Start with our free guides below
+            {/* Arrow prompts */}
+            <div className="flex flex-col gap-3 mt-8">
+              <a href="#free-guides" className="flex items-center gap-2 text-muted text-sm hover:text-foreground transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+                Start with our free guides below
+              </a>
+              <a href="#premium-guides" className="flex items-center gap-2 text-sm font-semibold transition-colors" style={{ color: '#C5A55A' }}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                Go deeper with our Advanced Guides
+              </a>
             </div>
           </div>
 
