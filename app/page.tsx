@@ -101,7 +101,7 @@ export default function Home() {
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #FAFAF8 0%, #F5F0E1 50%, #FAFAF8 100%)' }}>
       {/* Header */}
       <header className="px-6 py-4 max-w-7xl mx-auto flex items-center gap-3">
-        <img src="/logo.png" alt="SENERGY360 Logo" className="h-12 w-12 object-contain" />
+        <img src="/logo.png" alt="SENERGY360 Logo" className="h-24 w-24 object-contain" />
         <span className="text-lg font-semibold text-foreground tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>SENERGY360</span>
       </header>
 
