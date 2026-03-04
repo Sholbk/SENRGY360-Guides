@@ -55,39 +55,39 @@ const freeGuides = [
 
 const premiumGuides = [
   {
-    id: 'mold-advanced',
-    title: 'Advanced Mold Remediation',
-    description: 'Professional-level mold assessment, remediation protocols, and long-term prevention systems for your entire home.',
+    id: 'mold-comprehensive',
+    title: 'Comprehensive Mold-Free Living Guide',
+    description: 'The complete deep-dive into mold prevention and remediation — professional-level protocols, testing methods, and long-term strategies for every room in your home.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
     price: '$47',
     features: ['Step-by-step remediation protocols', 'Professional testing methods', 'Prevention maintenance plans', 'Product recommendations'],
     url: '#', // Replace with GoHighLevel link
   },
   {
-    id: 'air-quality',
-    title: 'Indoor Air Quality Masterclass',
-    description: 'Comprehensive guide to testing, monitoring, and optimizing your indoor air for peak health and performance.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
-    price: '$47',
-    features: ['Air quality testing protocols', 'HVAC optimization guide', 'Filtration system comparisons', 'Seasonal maintenance checklists'],
-    url: '#', // Replace with GoHighLevel link
-  },
-  {
-    id: 'water-advanced',
-    title: 'Whole-Home Water Systems',
-    description: 'From well water to city supply — build a complete water filtration and purification strategy for every tap in your home.',
+    id: 'water-comprehensive',
+    title: 'Comprehensive Water Guide',
+    description: 'From well water to city supply — a complete water quality strategy including filtration design, testing, and purification for every tap in your home.',
     image: 'https://images.unsplash.com/photo-1585687433056-c884e1a29a8b?w=600&h=400&fit=crop',
     price: '$47',
     features: ['Water testing & analysis', 'Whole-home filtration design', 'Point-of-use solutions', 'Maintenance schedules'],
     url: '#', // Replace with GoHighLevel link
   },
   {
-    id: 'emf',
-    title: 'EMF & Electrical Health',
-    description: 'Understand electromagnetic fields in your home and implement practical strategies to reduce exposure.',
+    id: 'lighting-comprehensive',
+    title: 'Comprehensive Lighting Guide',
+    description: 'Master the science of healthy lighting — circadian optimization, room-by-room design, bulb comparisons, and strategies to reduce blue light exposure.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
+    price: '$47',
+    features: ['Circadian rhythm optimization', 'Room-by-room lighting design', 'Bulb & fixture comparisons', 'Blue light reduction strategies'],
+    url: '#', // Replace with GoHighLevel link
+  },
+  {
+    id: 'laundry-comprehensive',
+    title: 'Comprehensive Laundry Guide',
+    description: 'Everything you need to eliminate toxins from your laundry routine — detergent deep-dives, machine optimization, and non-toxic product protocols.',
     image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop',
     price: '$47',
-    features: ['EMF measurement guide', 'Room-by-room assessment', 'Shielding strategies', 'Low-EMF product alternatives'],
+    features: ['Non-toxic detergent guide', 'Machine cleaning protocols', 'Fabric care by material', 'Product safety ratings'],
     url: '#', // Replace with GoHighLevel link
   },
 ];
