@@ -8,48 +8,48 @@ const guides = [
     title: 'Guide to Mold-Free Living',
     description: 'Learn to identify, prevent, and eliminate mold in your home for healthier indoor air quality.',
     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop',
+    file: 'mold-free-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    comingSoon: false,
   },
   {
     id: 'laundry',
     title: 'Healthy Laundry Guide',
     description: 'Discover non-toxic laundry practices and products for cleaner, healthier clothes.',
     image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=600&h=400&fit=crop',
+    file: 'laundry-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    comingSoon: false,
   },
   {
     id: 'water',
     title: 'Healthy Water Guide',
     description: "Optimize your home's water quality with filtration and purification strategies.",
     image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&h=400&fit=crop',
+    file: 'water-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3c-1.2 2.4-4 5.6-4 8a4 4 0 108 0c0-2.4-2.8-5.6-4-8z" />
       </svg>
     ),
-    comingSoon: false,
   },
   {
     id: 'lighting',
     title: 'Healthy Lighting Guide',
     description: 'Create optimal lighting environments that support your circadian rhythm and wellbeing.',
     image: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&h=400&fit=crop',
+    file: 'lighting-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    comingSoon: true,
   },
 ];
 
@@ -59,20 +59,43 @@ export default function Home() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const toggleGuide = (id: string) => {
-    const guide = guides.find(g => g.id === id);
-    if (guide?.comingSoon) return;
     setSelectedGuides(prev =>
       prev.includes(id) ? prev.filter(g => g !== id) : [...prev, id]
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (selectedGuides.length === 0) return;
-    setSubmitted(true);
+
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, selectedGuides }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const selectedGuideDetails = guides.filter(g => selectedGuides.includes(g.id));
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #FAFAF8 0%, #F5F0E1 50%, #FAFAF8 100%)' }}>
@@ -161,8 +184,6 @@ export default function Home() {
                 key={guide.id}
                 onClick={() => toggleGuide(guide.id)}
                 className={`relative bg-card-bg rounded-xl border overflow-hidden transition-all cursor-pointer ${
-                  guide.comingSoon ? 'opacity-70 cursor-not-allowed' : ''
-                } ${
                   isSelected
                     ? 'border-primary shadow-lg ring-2 ring-primary/20'
                     : 'border-border hover:shadow-md'
@@ -173,16 +194,8 @@ export default function Home() {
                   <img
                     src={guide.image}
                     alt={guide.title}
-                    className={`w-full h-full object-cover ${guide.comingSoon ? 'grayscale' : ''}`}
+                    className="w-full h-full object-cover"
                   />
-                  {guide.comingSoon && (
-                    <div className="absolute top-3 right-3 bg-card-bg/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-muted flex items-center gap-1 border border-border">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Coming Soon
-                    </div>
-                  )}
                 </div>
 
                 {/* Card content */}
@@ -198,23 +211,19 @@ export default function Home() {
                   </p>
 
                   {/* Divider + checkbox */}
-                  {!guide.comingSoon && (
-                    <>
-                      <hr className="my-4 border-border" />
-                      <label className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
-                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                          isSelected ? 'border-primary bg-primary' : 'border-border'
-                        }`}>
-                          {isSelected && (
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          )}
-                        </div>
-                        Select this guide
-                      </label>
-                    </>
-                  )}
+                  <hr className="my-4 border-border" />
+                  <label className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                      isSelected ? 'border-primary bg-primary' : 'border-border'
+                    }`}>
+                      {isSelected && (
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
+                    Select this guide
+                  </label>
                 </div>
               </div>
             );
@@ -226,18 +235,35 @@ export default function Home() {
       <section className="px-6 py-16 max-w-7xl mx-auto">
         <div className="max-w-xl mx-auto bg-card-bg rounded-2xl shadow-lg border border-border p-8 sm:p-10">
           {submitted ? (
-            <div className="text-center py-8">
+            <div className="text-center py-4">
               <div className="w-14 h-14 bg-primary-bg rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Georgia, serif' }}>
-                Thank You!
+                Thank You, {firstName}!
               </h3>
               <p className="mt-2 text-muted">
-                Your guides are on the way. Check your email for instant access.
+                Your guides are ready! Download them below and check your email for a copy.
               </p>
+
+              {/* Download buttons */}
+              <div className="mt-8 space-y-3">
+                {selectedGuideDetails.map(guide => (
+                  <a
+                    key={guide.id}
+                    href={`/guides/${guide.file}`}
+                    download
+                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-sm"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Download: {guide.title}
+                  </a>
+                ))}
+              </div>
             </div>
           ) : (
             <>
@@ -285,15 +311,32 @@ export default function Home() {
                   maxLength={254}
                   className="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-background text-center"
                 />
+
+                {error && (
+                  <p className="text-red-600 text-sm text-center">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  disabled={selectedGuides.length === 0}
+                  disabled={selectedGuides.length === 0 || loading}
                   className="w-full py-3.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-base disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Get My Free Guides
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {loading ? (
+                    <>
+                      <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Get My Free Guides
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
 
