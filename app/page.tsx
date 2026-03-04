@@ -59,7 +59,7 @@ const premiumGuides = [
     title: 'Comprehensive Mold-Free Living Guide',
     description: 'The complete deep-dive into mold prevention and remediation — professional-level protocols, testing methods, and long-term strategies for every room in your home.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
-    price: '$47',
+    price: '$67',
     features: ['Step-by-step remediation protocols', 'Professional testing methods', 'Prevention maintenance plans', 'Product recommendations'],
     url: '#', // Replace with GoHighLevel link
   },
@@ -68,7 +68,7 @@ const premiumGuides = [
     title: 'Comprehensive Water Guide',
     description: 'From well water to city supply — a complete water quality strategy including filtration design, testing, and purification for every tap in your home.',
     image: 'https://images.unsplash.com/photo-1585687433056-c884e1a29a8b?w=600&h=400&fit=crop',
-    price: '$47',
+    price: '$67',
     features: ['Water testing & analysis', 'Whole-home filtration design', 'Point-of-use solutions', 'Maintenance schedules'],
     url: '#', // Replace with GoHighLevel link
   },
@@ -77,17 +77,8 @@ const premiumGuides = [
     title: 'Comprehensive Lighting Guide',
     description: 'Master the science of healthy lighting — circadian optimization, room-by-room design, bulb comparisons, and strategies to reduce blue light exposure.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
-    price: '$47',
+    price: '$67',
     features: ['Circadian rhythm optimization', 'Room-by-room lighting design', 'Bulb & fixture comparisons', 'Blue light reduction strategies'],
-    url: '#', // Replace with GoHighLevel link
-  },
-  {
-    id: 'laundry-comprehensive',
-    title: 'Comprehensive Laundry Guide',
-    description: 'Everything you need to eliminate toxins from your laundry routine — detergent deep-dives, machine optimization, and non-toxic product protocols.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop',
-    price: '$47',
-    features: ['Non-toxic detergent guide', 'Machine cleaning protocols', 'Fabric care by material', 'Product safety ratings'],
     url: '#', // Replace with GoHighLevel link
   },
 ];
@@ -536,11 +527,11 @@ export default function Home() {
             Complete Healthy Home Bundle
           </h3>
           <p className="text-muted text-base max-w-xl mx-auto mb-6">
-            Get all 4 advanced guides at a special bundle price. Everything you need to transform your entire home into a healthier living environment.
+            Get all 3 advanced guides at a special bundle price. Everything you need to transform your entire home into a healthier living environment.
           </p>
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-muted line-through text-lg">$188</span>
-            <span className="text-3xl font-bold text-primary">$127</span>
+            <span className="text-muted line-through text-lg">$201</span>
+            <span className="text-3xl font-bold text-primary">$147</span>
           </div>
           <a
             href="#" // Replace with GoHighLevel bundle link
