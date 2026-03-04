@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const guides = [
+const freeGuides = [
   {
     id: 'mold',
     title: 'Guide to Mold-Free Living',
@@ -53,6 +53,45 @@ const guides = [
   },
 ];
 
+const premiumGuides = [
+  {
+    id: 'mold-advanced',
+    title: 'Advanced Mold Remediation',
+    description: 'Professional-level mold assessment, remediation protocols, and long-term prevention systems for your entire home.',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
+    price: '$47',
+    features: ['Step-by-step remediation protocols', 'Professional testing methods', 'Prevention maintenance plans', 'Product recommendations'],
+    url: '#', // Replace with GoHighLevel link
+  },
+  {
+    id: 'air-quality',
+    title: 'Indoor Air Quality Masterclass',
+    description: 'Comprehensive guide to testing, monitoring, and optimizing your indoor air for peak health and performance.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
+    price: '$47',
+    features: ['Air quality testing protocols', 'HVAC optimization guide', 'Filtration system comparisons', 'Seasonal maintenance checklists'],
+    url: '#', // Replace with GoHighLevel link
+  },
+  {
+    id: 'water-advanced',
+    title: 'Whole-Home Water Systems',
+    description: 'From well water to city supply — build a complete water filtration and purification strategy for every tap in your home.',
+    image: 'https://images.unsplash.com/photo-1585687433056-c884e1a29a8b?w=600&h=400&fit=crop',
+    price: '$47',
+    features: ['Water testing & analysis', 'Whole-home filtration design', 'Point-of-use solutions', 'Maintenance schedules'],
+    url: '#', // Replace with GoHighLevel link
+  },
+  {
+    id: 'emf',
+    title: 'EMF & Electrical Health',
+    description: 'Understand electromagnetic fields in your home and implement practical strategies to reduce exposure.',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop',
+    price: '$47',
+    features: ['EMF measurement guide', 'Room-by-room assessment', 'Shielding strategies', 'Low-EMF product alternatives'],
+    url: '#', // Replace with GoHighLevel link
+  },
+];
+
 export default function Home() {
   const [selectedGuides, setSelectedGuides] = useState<string[]>([]);
   const [firstName, setFirstName] = useState('');
@@ -95,7 +134,7 @@ export default function Home() {
     }
   };
 
-  const selectedGuideDetails = guides.filter(g => selectedGuides.includes(g.id));
+  const selectedGuideDetails = freeGuides.filter(g => selectedGuides.includes(g.id));
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #FAFAF8 0%, #F5F0E1 50%, #FAFAF8 100%)' }}>
@@ -119,12 +158,12 @@ export default function Home() {
               <span style={{ color: '#C5A55A' }}>Healthier Home</span>
             </h1>
             <p className="mt-6 text-base text-muted leading-relaxed max-w-lg">
-              Join the SENERGY360 community and receive our expert-created guides with practical, research-informed strategies you can implement immediately to optimize your home environment and reduce toxic load.
+              Start with our free expert guides, then go deeper with our advanced resources. Practical, research-informed strategies you can implement immediately to optimize your home environment.
             </p>
 
-            {/* Badges */}
+            {/* Two-tier badges */}
             <div className="flex flex-wrap gap-3 mt-8">
-              {['Expert Created', 'Research-Based', 'Actionable Tips'].map(badge => (
+              {['Free Starter Guides', 'Advanced Deep-Dives', 'Expert Created'].map(badge => (
                 <span
                   key={badge}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card-bg text-sm text-foreground"
@@ -140,9 +179,9 @@ export default function Home() {
             {/* Arrow prompt */}
             <div className="flex items-center gap-2 mt-8 text-muted text-sm">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-              Select your guides below
+              Start with our free guides below
             </div>
           </div>
 
@@ -155,7 +194,7 @@ export default function Home() {
                 className="w-full h-[400px] lg:h-[480px] object-cover"
               />
             </div>
-            {/* Floating badge */}
+            {/* Floating badges */}
             <div className="absolute bottom-[-20px] left-8 bg-card-bg rounded-xl shadow-lg px-5 py-4 flex items-center gap-3 border border-border">
               <div className="w-10 h-10 bg-primary-bg rounded-full flex items-center justify-center">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,27 +202,37 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-foreground text-sm">Free Guides</p>
-                <p className="text-muted text-xs">4 Expert Guides</p>
+                <p className="font-semibold text-foreground text-sm">Free + Premium</p>
+                <p className="text-muted text-xs">8 Expert Guides</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Choose Your Guides Section */}
-      <section id="guides" className="px-6 py-20 max-w-7xl mx-auto">
+      {/* ═══════════════════════════════════════════ */}
+      {/* FREE GUIDES SECTION                        */}
+      {/* ═══════════════════════════════════════════ */}
+      <section id="free-guides" className="px-6 py-20 max-w-7xl mx-auto">
+        <div className="text-center mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style={{ background: '#E8F5E9', color: '#2E7D32' }}>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+            </svg>
+            Free
+          </span>
+        </div>
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
-            Choose Your Guides
+            Start With Our Free Guides
           </h2>
           <p className="mt-4 text-muted text-base max-w-xl mx-auto">
-            Select the guides you&apos;d like to receive. Each guide is packed with actionable strategies for a healthier home.
+            Select the guides you&apos;d like — enter your email and get instant access. No cost, no obligation.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {guides.map(guide => {
+          {freeGuides.map(guide => {
             const isSelected = selectedGuides.includes(guide.id);
             return (
               <div
@@ -195,6 +244,11 @@ export default function Home() {
                     : 'border-border hover:shadow-md'
                 }`}
               >
+                {/* Free badge */}
+                <div className="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-xs font-semibold" style={{ background: '#E8F5E9', color: '#2E7D32' }}>
+                  Free
+                </div>
+
                 {/* Card image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -269,6 +323,20 @@ export default function Home() {
                     Download: {guide.title}
                   </a>
                 ))}
+              </div>
+
+              {/* Upsell after free download */}
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-sm text-muted mb-3">Ready to take the next step?</p>
+                <a
+                  href="#premium-guides"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                >
+                  Explore our Advanced Guides
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </a>
               </div>
             </div>
           ) : (
@@ -357,6 +425,134 @@ export default function Home() {
               </p>
             </>
           )}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════ */}
+      {/* TRANSITION / BRIDGE SECTION                */}
+      {/* ═══════════════════════════════════════════ */}
+      <section className="px-6 py-20 max-w-7xl mx-auto">
+        <div className="relative text-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border" />
+          </div>
+          <div className="relative inline-flex items-center gap-3 bg-primary-bg px-8 py-4 rounded-full border border-primary-light">
+            <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+            <span className="font-semibold text-foreground text-sm" style={{ fontFamily: 'var(--font-montserrat)' }}>
+              Ready to Go Deeper?
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════ */}
+      {/* PREMIUM GUIDES SECTION                     */}
+      {/* ═══════════════════════════════════════════ */}
+      <section id="premium-guides" className="px-6 pb-20 max-w-7xl mx-auto">
+        <div className="text-center mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase" style={{ background: 'linear-gradient(135deg, #F5F0E1, #E8D9A8)', color: '#8B6914' }}>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Advanced
+          </span>
+        </div>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
+            Advanced Guides
+          </h2>
+          <p className="mt-4 text-muted text-base max-w-2xl mx-auto">
+            Go beyond the basics with our in-depth, professional-level guides. Each includes detailed protocols, product recommendations, and expert strategies.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-8">
+          {premiumGuides.map(guide => (
+            <div
+              key={guide.id}
+              className="bg-card-bg rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div className="grid md:grid-cols-5">
+                {/* Image */}
+                <div className="md:col-span-2 h-56 md:h-full overflow-hidden">
+                  <img
+                    src={guide.image}
+                    alt={guide.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="md:col-span-3 p-6 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-bold text-foreground text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
+                        {guide.title}
+                      </h3>
+                      <span className="text-lg font-bold text-primary whitespace-nowrap ml-3">{guide.price}</span>
+                    </div>
+                    <p className="text-muted text-sm leading-relaxed mb-4">
+                      {guide.description}
+                    </p>
+
+                    {/* Feature list */}
+                    <ul className="space-y-2 mb-6">
+                      {guide.features.map(feature => (
+                        <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
+                          <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href={guide.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-semibold text-sm transition-colors text-white bg-primary hover:bg-primary-dark"
+                  >
+                    Get This Guide
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bundle CTA */}
+        <div className="mt-12 bg-card-bg rounded-2xl border-2 border-primary/30 p-8 sm:p-10 text-center" style={{ background: 'linear-gradient(135deg, #FFFDF5 0%, #F5F0E1 100%)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4" style={{ background: '#C5A55A', color: '#FFFFFF' }}>
+            Best Value
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+            Complete Healthy Home Bundle
+          </h3>
+          <p className="text-muted text-base max-w-xl mx-auto mb-6">
+            Get all 4 advanced guides at a special bundle price. Everything you need to transform your entire home into a healthier living environment.
+          </p>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-muted line-through text-lg">$188</span>
+            <span className="text-3xl font-bold text-primary">$127</span>
+          </div>
+          <a
+            href="#" // Replace with GoHighLevel bundle link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-base"
+          >
+            Get the Complete Bundle
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </div>
       </section>
 
