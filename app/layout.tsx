@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, Poppins, Questrial } from "next/font/google";
+import { Montserrat, Nunito_Sans, Poppins, Questrial } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-heading",
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunitoSans.variable} ${poppins.variable} ${questrial.variable} antialiased`}
+        className={`${montserrat.variable} ${nunitoSans.variable} ${poppins.variable} ${questrial.variable} antialiased`}
         style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
       >
         {children}
