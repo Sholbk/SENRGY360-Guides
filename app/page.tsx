@@ -7,7 +7,7 @@ const freeGuides = [
     id: 'mold',
     title: 'Guide to Mold-Free Living',
     description: 'Learn to identify, prevent, and eliminate mold in your home for healthier indoor air quality.',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop',
+    image: '/guides/mold-free-guide.png',
     file: 'mold-free-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@ const freeGuides = [
     id: 'laundry',
     title: 'Healthy Laundry Guide',
     description: 'Discover non-toxic laundry practices and products for cleaner, healthier clothes.',
-    image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=600&h=400&fit=crop',
+    image: '/guides/laundry-guide.png',
     file: 'laundry-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ const freeGuides = [
     id: 'water',
     title: 'Healthy Water Guide',
     description: "Optimize your home's water quality with filtration and purification strategies.",
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&h=400&fit=crop',
+    image: '/guides/water-guide.png',
     file: 'water-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ const freeGuides = [
     id: 'lighting',
     title: 'Healthy Lighting Guide',
     description: 'Create optimal lighting environments that support your circadian rhythm and wellbeing.',
-    image: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&h=400&fit=crop',
+    image: '/guides/lighting-guide.png',
     file: 'lighting-guide.pdf',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
