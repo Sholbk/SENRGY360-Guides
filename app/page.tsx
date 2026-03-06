@@ -61,7 +61,7 @@ const premiumGuides = [
     image: 'https://images.unsplash.com/photo-1754574741164-a41418029cfb?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Step-by-step remediation protocols', 'Professional testing methods', 'Prevention maintenance plans', 'Product recommendations'],
-    url: '#', // Replace with GoHighLevel link
+    url: 'https://shop.senergy360.com/product-details/product/mold-guide',
   },
   {
     id: 'water-comprehensive',
@@ -70,7 +70,7 @@ const premiumGuides = [
     image: 'https://images.unsplash.com/photo-1683150487993-cfa490ffd89e?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Water testing & analysis', 'Whole-home filtration design', 'Point-of-use solutions', 'Maintenance schedules'],
-    url: '#', // Replace with GoHighLevel link
+    url: 'https://shop.senergy360.com/product-details/product/comprehensivewaterguide',
   },
   {
     id: 'lighting-comprehensive',
@@ -79,7 +79,7 @@ const premiumGuides = [
     image: 'https://images.unsplash.com/photo-1572891086295-6c1c7c476549?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Circadian rhythm optimization', 'Room-by-room lighting design', 'Bulb & fixture comparisons', 'Blue light reduction strategies'],
-    url: '#', // Replace with GoHighLevel link
+    url: 'https://shop.senergy360.com/product-details/product/lightingguide',
   },
 ];
 
