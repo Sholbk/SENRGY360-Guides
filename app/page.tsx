@@ -58,7 +58,7 @@ const premiumGuides = [
     id: 'mold-comprehensive',
     title: 'Comprehensive Mold-Free Living Guide',
     description: 'The complete deep-dive into mold prevention and remediation — professional-level protocols, testing methods, and long-term strategies for every room in your home.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1754574741164-a41418029cfb?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Step-by-step remediation protocols', 'Professional testing methods', 'Prevention maintenance plans', 'Product recommendations'],
     url: '#', // Replace with GoHighLevel link
@@ -67,7 +67,7 @@ const premiumGuides = [
     id: 'water-comprehensive',
     title: 'Comprehensive Water Guide',
     description: 'From well water to city supply — a complete water quality strategy including filtration design, testing, and purification for every tap in your home.',
-    image: 'https://images.unsplash.com/photo-1585687433056-c884e1a29a8b?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1683150487993-cfa490ffd89e?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Water testing & analysis', 'Whole-home filtration design', 'Point-of-use solutions', 'Maintenance schedules'],
     url: '#', // Replace with GoHighLevel link
@@ -76,7 +76,7 @@ const premiumGuides = [
     id: 'lighting-comprehensive',
     title: 'Comprehensive Lighting Guide',
     description: 'Master the science of healthy lighting — circadian optimization, room-by-room design, bulb comparisons, and strategies to reduce blue light exposure.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1572891086295-6c1c7c476549?w=600&h=400&fit=crop',
     price: '$67',
     features: ['Circadian rhythm optimization', 'Room-by-room lighting design', 'Bulb & fixture comparisons', 'Blue light reduction strategies'],
     url: '#', // Replace with GoHighLevel link
