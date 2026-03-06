@@ -140,10 +140,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side */}
           <div>
-            <p className="text-sm font-semibold tracking-widest text-muted uppercase mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-              SENERGY360 COMMUNITY
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+<h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               Your Path to a{' '}
               <br />
               <span style={{ color: '#C5A55A' }}>Healthier Home</span>
