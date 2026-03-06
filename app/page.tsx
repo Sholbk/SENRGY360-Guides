@@ -526,33 +526,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Bundle CTA */}
-        <div className="mt-12 bg-card-bg rounded-2xl border-2 border-primary/30 p-8 sm:p-10 text-center" style={{ background: 'linear-gradient(135deg, #FFFDF5 0%, #F5F0E1 100%)' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4" style={{ background: '#C5A55A', color: '#FFFFFF' }}>
-            Best Value
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
-            Complete Healthy Home Bundle
-          </h3>
-          <p className="text-muted text-base max-w-xl mx-auto mb-6">
-            Get all 3 advanced guides at a special bundle price. Everything you need to transform your entire home into a healthier living environment.
-          </p>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-muted line-through text-lg">$201</span>
-            <span className="text-3xl font-bold text-primary">$147</span>
-          </div>
-          <a
-            href="#" // Replace with GoHighLevel bundle link
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-base"
-          >
-            Get the Complete Bundle
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-        </div>
       </section>
 
       {/* Footer */}
